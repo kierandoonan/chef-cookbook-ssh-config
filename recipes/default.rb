@@ -7,20 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-if node[:ssh_config][:local_config]
-  ssh_directory = "/home/#{node[:ssh_config][:local_user]}/.ssh"
-  config_file = 'config'
-else
-  ssh_directory = '/etc/ssh'
-  config_file = 'ssh_config'
-end
-
-directory ssh_directory do
-  mode '0755'
-  action :create
-end
-
-template "#{ssh_directory}/#{config_file}" do
+template "#{node[:ssh_config][:config_file]}" do
   source 'config.erb'
   mode '0744'
   variables({

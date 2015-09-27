@@ -19,16 +19,10 @@ Attributes
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ssh-config']['local_config']</tt></td>
-    <td>Boolean</td>
-    <td>Install the config locally for a user (~/.ssh/config) or globally (/etc/ssh/ssh_config)</td>
-    <td><tt>false</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['ssh-config']['local_user']</tt></td>
+    <td><tt>['ssh-config']['config_file']</tt></td>
     <td>String</td>
-    <td>If local_user is set, which user will this update (the user needs to already exist)</td>
-    <td><tt>ubuntu</tt></td>
+    <td>The location of the config file to update (defaults to global config)</td>
+    <td><tt>/etc/ssh/ssh_config</tt></td>
   </tr>
   <tr>
     <td><tt>['ssh-config']['identityfile_dir']</tt></td>
