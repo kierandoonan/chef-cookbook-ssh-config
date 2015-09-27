@@ -16,16 +16,12 @@ else
 end
 
 directory ssh_directory do
-  owner 'root'
-  group 'root'
   mode '0755'
   action :create
 end
 
 template "#{ssh_directory}/#{config_file}" do
   source 'config.erb'
-  owner 'root'
-  group 'root'
   mode '0744'
   variables({
     :hosts => search(:ssh_config).map{ |h| h['hosts'] }.flatten
