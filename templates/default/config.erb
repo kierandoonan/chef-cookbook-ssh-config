@@ -1,0 +1,12 @@
+<% @hosts.each do |host| %>
+Host <%= host['id'] %>
+  <% host.select{ |k| k != 'id' }.keys.each do |key|
+      if key == 'identityfile'
+        value = "#{node[:ssh_config][:identityfile_dir]}/#{host[key]}"
+      else
+        value = host[key]
+      end
+  %>
+  <%= "#{key} #{value}" %>
+  <% end %>
+<% end %>

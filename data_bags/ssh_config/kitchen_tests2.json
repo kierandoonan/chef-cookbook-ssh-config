@@ -1,0 +1,12 @@
+{
+  "id": "kitchen_tests2",
+  "hosts": [
+    {
+      "id": "kitchen-test-2",
+      "identityfile": "kitchen-test-2.pem",
+      "hostname": "8.8.8.9",
+      "user": "kitchen-user-2",
+      "port": 2222
+    }
+  ]
+}
